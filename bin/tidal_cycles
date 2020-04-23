@@ -1,0 +1,2 @@
+#!/bin/bash
+ghci -ghci-script tidal_init.ghci

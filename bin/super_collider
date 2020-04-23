@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+super_collider = '/Applications/SuperCollider.app/Contents/MacOS/sclang'
+startup_file = 'superdirt_startup.scd'
+
+begin
+  @sclang = nil
+  IO.popen("#{super_collider} #{startup_file}") do |sclang|
+    @sclang = sclang
+    puts '*** Welcome to SuperCollider ***'
+    puts 'Use Ctrl-C to stop'
+    loop do; end
+  end
+rescue SystemExit, Interrupt
+  @sclang&.close
+  puts '- Stopping SuperCollider...'
+  puts 'Exiting'
+end
