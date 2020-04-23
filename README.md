@@ -1,5 +1,5 @@
 # jamcity
-Run TidalCycles and SuperCollider from command line
+Run TidalCycles and SuperCollider from the command line.
 
 ### Prerequisites
 
@@ -13,7 +13,7 @@ Run TidalCycles and SuperCollider from command line
 bin/super_collider
 ```
 
-### Run Tidal:
+### Run TidalCycles:
 ```
 bin/tidal_cycles
 ```
@@ -22,3 +22,10 @@ bin/tidal_cycles
 ```
 d1 $ sound "bd*2 cp"
 ```
+
+### Helpful resources:
+
+- https://tidalcycles.org/index.php/Tutorial
+- https://tidalcycles.org/index.php/Mini_notation_syntax
+- https://tidalcycles.org/index.php/Building_up_patterns
+- https://tidalcycles.org/index.php/All_effects_and_synths
