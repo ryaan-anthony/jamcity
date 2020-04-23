@@ -4,7 +4,7 @@ Run TidalCycles and SuperCollider from the command line.
 ### Prerequisites
 
 - [TidalCycles/SuperCollider](https://tidalcycles.org/index.php/Installation)
-- [Haskell compiler](https://www.haskell.org/ghc/)
+- [Haskell platform](https://www.haskell.org/platform/)
 - Ruby >= 2.4
 
 
