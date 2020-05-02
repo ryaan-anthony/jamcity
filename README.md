@@ -3,7 +3,8 @@ Run TidalCycles and SuperCollider from the command line.
 
 ### Prerequisites
 
-- [TidalCycles/SuperCollider](https://tidalcycles.org/index.php/Installation)
+- [SuperCollider](https://supercollider.github.io/download)
+- [TidalCycles](https://tidalcycles.org/index.php/Installation)
 - [Haskell platform](https://www.haskell.org/platform/)
 - Ruby >= 2.4
 
@@ -28,6 +29,7 @@ d1 $ sound "bd*2 cp"
 
 ### Roadmap:
 
+- Dockerize all dependecies
 - Creating a GUI sequencer
 
 ![JamCity Sequencer](wireframe.png)
