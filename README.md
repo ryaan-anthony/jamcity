@@ -7,6 +7,9 @@ Run TidalCycles and SuperCollider from the command line.
 - [Haskell platform](https://www.haskell.org/platform/)
 - Ruby >= 2.4
 
+### MIDI:
+
+Configure your midi device in `superdirt_startup.scd`. Run `bin/super_collider` to see list of available devices.
 
 ### Start SuperCollider:
 ```

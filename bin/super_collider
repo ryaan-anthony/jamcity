@@ -1,18 +1,16 @@
 #!/usr/bin/ruby
 
+require 'pty'
 super_collider = '/Applications/SuperCollider.app/Contents/MacOS/sclang'
 startup_file = 'superdirt_startup.scd'
 
 begin
-  @sclang = nil
-  IO.popen("#{super_collider} #{startup_file}") do |sclang|
-    @sclang = sclang
+  PTY.spawn("#{super_collider} #{startup_file}") do |stdout, stdin, pid|
     puts '*** Welcome to SuperCollider ***'
     puts 'Use Ctrl-C to stop'
-    loop do; end
+    stdout.each { |line| print line if line =~ /MIDI/ }
   end
 rescue SystemExit, Interrupt
-  @sclang&.close
   puts '- Stopping SuperCollider...'
   puts 'Exiting'
 end
