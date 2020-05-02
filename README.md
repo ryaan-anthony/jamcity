@@ -26,6 +26,12 @@ bin/tidal_cycles
 d1 $ sound "bd*2 cp"
 ```
 
+### Roadmap:
+
+- Creating a GUI sequencer
+
+![JamCity Sequencer](wireframe.png)
+
 ### Helpful resources:
 
 - https://tidalcycles.org/index.php/Tutorial

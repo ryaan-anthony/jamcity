@@ -1,2 +1,19 @@
-#!/bin/bash
-ghci -ghci-script tidal_init.ghci
+#!/usr/bin/ruby
+
+require 'pty'
+startup_file = 'tidal_init.ghci'
+
+begin
+  PTY.spawn("ghci -ghci-script #{startup_file}") do |stdout, stdin, pid|
+    puts '*** Welcome to TidalCycles ***'
+    puts 'Use Ctrl-C to stop'
+    loop do
+      print 'tidal> '
+      foo = STDIN.gets
+      stdin.puts foo
+    end
+  end
+rescue SystemExit, Interrupt
+  puts '- Stopping TidalCycles...'
+  puts 'Exiting'
+end
