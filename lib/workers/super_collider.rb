@@ -1,14 +1,13 @@
-#!/usr/bin/ruby
+# frozen_string_literal: true
 
 require 'pty'
 super_collider = '/Applications/SuperCollider.app/Contents/MacOS/sclang'
-startup_file = 'superdirt_startup.scd'
+startup_file = 'config/superdirt_startup.scd'
 
 begin
   PTY.spawn("#{super_collider} #{startup_file}") do |stdout, stdin, pid|
-    puts '*** Welcome to SuperCollider ***'
-    puts 'Use Ctrl-C to stop'
-    stdout.each { |line| print line if line =~ /MIDI/ }
+    # stdout.each { |line| print line if line =~ /MIDI/ }
+    stdout.each { |line| print line }
   end
 rescue SystemExit, Interrupt
   puts '- Stopping SuperCollider...'

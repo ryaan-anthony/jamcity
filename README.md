@@ -10,21 +10,11 @@ Run TidalCycles and SuperCollider from the command line.
 
 ### MIDI:
 
-Configure your midi device in `superdirt_startup.scd`. Run `bin/super_collider` to see list of available devices.
+Configure your midi device in `config/superdirt_startup.scd`.
 
-### Start SuperCollider:
+### Launch Sequencer:
 ```
-bin/super_collider
-```
-
-### Run TidalCycles:
-```
-bin/tidal_cycles
-```
-
-### Test sound:
-```
-d1 $ sound "bd*2 cp"
+bin/sequencer
 ```
 
 ### Roadmap:
@@ -32,7 +22,7 @@ d1 $ sound "bd*2 cp"
 - Dockerize all dependecies
 - Creating a GUI sequencer
 
-![JamCity Sequencer](wireframe.png)
+![JamCity Sequencer](assets/wireframe.png)
 
 ### Helpful resources:
 
