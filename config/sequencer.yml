@@ -1,7 +1,7 @@
 sequencer:
   window:
     :title: Jamcity Sequencer
-    :width: 600
-    :height: 250
+    :width: 850
+    :height: 350
     :resizable: false
-    :background: white
+    :background: '#858585'
