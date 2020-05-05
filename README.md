@@ -1,5 +1,5 @@
 # jamcity
-Run TidalCycles and SuperCollider from the command line.
+Midi Sequencer
 
 ### Prerequisites
 
@@ -12,15 +12,14 @@ Run TidalCycles and SuperCollider from the command line.
 
 Configure your midi device in `config/superdirt_startup.scd`.
 
-### Launch Sequencer:
+### Launch Jamcity:
 ```
-bin/sequencer
+bin/jamcity
 ```
 
 ### Roadmap:
 
-- Dockerize all dependecies
-- Creating a GUI sequencer
+- Single executable program
 
 ![JamCity Sequencer](assets/wireframe.png)
 
