@@ -1,3 +1,5 @@
+require 'jamcity/models/element'
+
 module Jamcity
   class Layout
     attr_reader :collection
