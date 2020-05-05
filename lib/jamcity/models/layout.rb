@@ -1,35 +1,25 @@
 # frozen_string_literal: true
 
-require 'jamcity/models/element'
+require 'jamcity/views/note_field'
+require 'jamcity/views/step_grid'
 
 module Jamcity
   class Layout
+    include NoteField
+    include StepGrid
     attr_reader :collection
 
     def initialize
-      @collection = []
+      @collection = {}
     end
 
-    def add(element)
-      @collection << element
+    def add(type, element)
+      @collection[type] ||= []
+      @collection[type] << element
     end
 
     def refresh
-      collection.map(&:render)
-    end
-
-    def add_step(x, y)
-      size = 50
-      offset_x = 20
-      offset_y = 125
-
-      add Element.new(
-        type: Square,
-        size: size,
-        x: (size * x + offset_x + x),
-        y: (size * y + offset_y + y),
-        color: y == 0 && x < 8 ? '#f7f7f7' : 'gray'
-      )
+      collection.values.flatten.map(&:render)
     end
   end
 end

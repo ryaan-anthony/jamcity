@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'jamcity/listeners/hush_listener'
-require 'jamcity/listeners/play_listener'
-require 'jamcity/listeners/shift_mode_listener'
+require 'jamcity/modules/keypress_events/hush_listener'
+require 'jamcity/modules/keypress_events/play_listener'
+require 'jamcity/modules/keypress_events/shift_mode_listener'
 
 module Jamcity
   module KeypressEvents

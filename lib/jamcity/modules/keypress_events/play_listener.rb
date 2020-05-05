@@ -5,7 +5,7 @@ require 'jamcity/listener'
 module Jamcity
   class PlayListener < Listener
     def match?(event)
-      event.key == 'return'
+      event.key == 'space'
     end
 
     def down(event)

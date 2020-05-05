@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'jamcity/listeners/step_selection_listener'
+require 'jamcity/modules/mouse_events/step_selection_listener'
 
 module Jamcity
   module MouseEvents

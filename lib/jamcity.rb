@@ -8,8 +8,8 @@ require 'jamcity/main'
 
 main = Jamcity::Main
 
-(0..7).map do |sub_step|
-  # Display notes (??)
+(0..7).map do |note|
+  main.layout.add_note(note)
 end
 
 (0..3).map do |channel|
