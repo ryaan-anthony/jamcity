@@ -1,13 +1,15 @@
-module Jamcity
-  class HushListener
-    class << self
-      def match?(key)
-        key == 'escape'
-      end
+# frozen_string_literal: true
 
-      def down(app)
-        app.send_message('hush')
-      end
+require 'jamcity/listener'
+
+module Jamcity
+  class HushListener < Listener
+    def match?(event)
+      event.key == 'escape'
+    end
+
+    def down(event)
+      app.send_message('hush')
     end
   end
 end

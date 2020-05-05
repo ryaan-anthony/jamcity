@@ -8,27 +8,36 @@ require 'jamcity/main'
 
 main = Jamcity::Main
 
+(0..7).map do |sub_step|
+  # Display notes (??)
+end
+
 (0..3).map do |channel|
   (0..15).map do |step|
     main.layout.add_step(step, channel)
   end
 end
+
 main.layout.refresh
 
+on :mouse_move do |event|
+  main.mouse_event(event)
+end
+
+on :mouse_up do |event|
+  main.mouse_event(event)
+end
+
 on :mouse_down do |event|
-  main.layout.refresh
-  button = main.layout.collection.detect { |element| element.contains?(event.x, event.y) }
-  button.render(color: 'red') if button
+  main.mouse_event(event)
 end
 
 on :key_down do |event|
-  listener = main.listeners.detect { |listener| listener.match? event.key }
-  listener.down(main) if listener.respond_to? :down
+  main.keypress(event)
 end
 
 on :key_up do |event|
-  listener = main.listeners.detect { |listener| listener.match? event.key }
-  listener.up(main) if listener.respond_to? :up
+  main.keypress(event)
 end
 
 set main.config[:window]

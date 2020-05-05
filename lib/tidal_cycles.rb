@@ -3,6 +3,7 @@
 require 'pty'
 require 'socket'
 startup_file = 'config/tidal_init.ghci'
+
 begin
   PTY.spawn("ghci -ghci-script #{startup_file}") do |stdout, stdin, pid|
     server = TCPServer.open(2000)

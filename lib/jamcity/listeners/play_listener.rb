@@ -1,16 +1,18 @@
-module Jamcity
-  class PlayListener
-    class << self
-      def match?(key)
-        key == 'space'
-      end
+# frozen_string_literal: true
 
-      def down(app)
-        if app.shift_mode
-          app.send_message('d1 $ n "c3 g3 f3" # s "supersaw"')
-        else
-          app.send_message('d1 $ n "c g f" # s "supersaw"')
-        end
+require 'jamcity/listener'
+
+module Jamcity
+  class PlayListener < Listener
+    def match?(event)
+      event.key == 'return'
+    end
+
+    def down(event)
+      if app.shift_mode
+        app.send_message('d1 $ n "c3 g3 e3" # s "midi"')
+      else
+        app.send_message('d1 $ n "c g e" # s "midi"')
       end
     end
   end

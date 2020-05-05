@@ -1,14 +1,17 @@
+# frozen_string_literal: true
+
 require 'config-reader'
-require 'jamcity/listeners/hush_listener'
-require 'jamcity/listeners/play_listener'
-require 'jamcity/listeners/shift_mode_listener'
 require 'jamcity/models/layout'
+require 'jamcity/models/state'
+require 'jamcity/modules/keypress_events'
+require 'jamcity/modules/mouse_events'
 require 'jamcity/services/tidal_cycles'
 
 module Jamcity
   class Main
     class << self
-      attr_accessor :shift_mode
+      include KeypressEvents
+      include MouseEvents
 
       def config
         @config ||= ConfigReader.new('config/jamcity.yml', :jamcity).config
@@ -24,14 +27,6 @@ module Jamcity
 
       def send_message(message)
         TidalCycles.send_message(message)
-      end
-
-      def listeners
-        [
-          HushListener,
-          PlayListener,
-          ShiftModeListener
-        ]
       end
     end
   end
