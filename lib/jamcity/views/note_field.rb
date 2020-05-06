@@ -4,7 +4,7 @@ require 'jamcity/models/elements/note'
 
 module Jamcity
   module NoteField
-    def render_notes
+    def draw_notes
       (0..7).map do |note|
         add_note(note)
       end

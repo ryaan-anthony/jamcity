@@ -4,7 +4,7 @@ require 'jamcity/models/elements/step'
 
 module Jamcity
   module StepGrid
-    def render_steps
+    def draw_steps
       (0..3).map do |channel|
         (0..15).map do |step|
           add_step(step, channel)

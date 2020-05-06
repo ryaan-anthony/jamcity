@@ -23,8 +23,8 @@ module Jamcity
     end
 
     def draw
-      render_notes
-      render_steps
+      draw_notes
+      draw_steps
       refresh
     end
   end
