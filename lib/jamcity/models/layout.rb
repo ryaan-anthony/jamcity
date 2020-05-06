@@ -21,5 +21,11 @@ module Jamcity
     def refresh
       collection.values.flatten.map(&:render)
     end
+
+    def draw
+      render_notes
+      render_steps
+      refresh
+    end
   end
 end
