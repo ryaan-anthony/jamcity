@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'config-reader'
+require 'json'
 require 'socket'
 
 module Jamcity
