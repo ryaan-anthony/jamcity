@@ -23,8 +23,20 @@ module Jamcity
       end
 
       def receive_message(message)
-        response = 'TODO'
-        "Request: #{message}, Response: #{response}"
+        action, channel, request = message.split(' ', 3)
+        response = nil
+        case action
+          when '/play'
+            # todo
+            response = request
+          when '/stop'
+            # todo
+          when '/record'
+            # todo
+          else
+            response = 'Invalid method'
+        end
+        { body: response }.to_json
       end
 
       def connection

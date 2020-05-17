@@ -6,7 +6,7 @@ module Jamcity
       def run(app)
         @app = app
 
-        send_message('HOWDY')
+        send_message('/play 1 HOWDY')
       end
 
       private
