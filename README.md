@@ -6,9 +6,14 @@ Midi Sequencer
 - Ruby >= 2.4
 - alsa-utils
 
-### Launch Jamcity:
+### Start Jamcity server:
 ```
-ruby jamcity.rb
+bin/jamcity-server
+```
+
+### Start Jamcity client:
+```
+bin/jamcity-client
 ```
 
 ### Roadmap:

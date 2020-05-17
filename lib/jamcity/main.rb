@@ -3,15 +3,19 @@
 require 'config-reader'
 require 'jamcity/models/layout'
 require 'jamcity/models/state'
-require 'jamcity/modules/keypress_events'
-require 'jamcity/modules/mouse_events'
-require 'jamcity/services/tidal_cycles'
+require 'jamcity/services/server'
+require 'jamcity/services/client'
 
 module Jamcity
   class Main
     class << self
-      include KeypressEvents
-      include MouseEvents
+      def server
+        Server.run(self)
+      end
+
+      def client
+        Client.run(self)
+      end
 
       def config
         @config ||= ConfigReader.new('config/jamcity.yml', :jamcity).config
@@ -23,10 +27,6 @@ module Jamcity
 
       def state
         @state ||= State.new
-      end
-
-      def send_message(message)
-        TidalCycles.send_message(message)
       end
     end
   end

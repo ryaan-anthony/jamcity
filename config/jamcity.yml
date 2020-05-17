@@ -1,7 +1,4 @@
 jamcity:
-  window:
-    :title: Jamcity Sequencer
-    :width: 850
-    :height: 350
-    :resizable: false
-    :background: '#858585'
+  server:
+    host: 192.168.1.177
+    port: 2000

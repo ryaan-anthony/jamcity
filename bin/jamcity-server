@@ -1,0 +1,3 @@
+#!/bin/bash
+
+JAMCITY_ENV=server bundle exec ruby lib/jamcity.rb

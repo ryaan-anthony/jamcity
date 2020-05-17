@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Jamcity
-  class TidalCycles
+  class Client
     class << self
       def send_message(message)
         hostname = 'localhost'

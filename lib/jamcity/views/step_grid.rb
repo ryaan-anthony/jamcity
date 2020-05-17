@@ -5,8 +5,8 @@ require 'jamcity/models/elements/step'
 module Jamcity
   module StepGrid
     def draw_steps
-      (0..3).map do |channel|
-        (0..15).map do |step|
+      (0..1).map do |channel|
+        (0..7).map do |step|
           add_step(step, channel)
         end
       end
@@ -17,7 +17,7 @@ module Jamcity
     end
 
     def add_step(x, y)
-      size = 50
+      size = 120
       offset_x = 20
       offset_y = 125
 
