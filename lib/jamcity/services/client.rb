@@ -12,18 +12,24 @@ module Jamcity
       private
 
       def send_message(message)
-        socket = TCPSocket.open(host, port)
-        socket.sendmsg(message)
-        socket.close_write
-        puts socket.read
+        connect do |socket|
+          socket.sendmsg(message)
+          socket.close_write
+          puts socket.read # todo: handle response
+        end
+      end
+
+      def connect
+        socket = TCPSocket.open(server_host, server_port)
+        yield socket
         socket.close
       end
 
-      def host
+      def server_host
         @app.config.server['host']
       end
 
-      def port
+      def server_port
         @app.config.server['port']
       end
     end
