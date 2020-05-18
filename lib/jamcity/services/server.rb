@@ -9,10 +9,10 @@ module Jamcity
     class << self
       def run(app)
         @app = app
-        puts "Listening on port #{port}"
+        app.logger.info "Listening on port #{port}"
         loop { accept_connection }
       rescue SystemExit, Interrupt
-        puts '- Stopping...'
+        app.logger.info 'Connection closed'
       end
 
       private
@@ -21,6 +21,8 @@ module Jamcity
         socket = connection.accept
         socket.write receive_message(socket.gets)
         socket.close_write
+      rescue StandardError => e
+        @app.logger.error e.message
       end
 
       def receive_message(message)

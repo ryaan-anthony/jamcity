@@ -2,6 +2,7 @@
 
 require 'config-reader'
 require 'jamcity/models/layout'
+require 'jamcity/models/logger'
 require 'jamcity/models/state'
 require 'jamcity/services/server'
 require 'jamcity/services/client'
@@ -19,6 +20,10 @@ module Jamcity
 
       def config
         @config ||= ConfigReader.new('config/jamcity.yml', :jamcity).config
+      end
+
+      def logger
+        @logger ||= Logger.new
       end
 
       def layout

@@ -6,7 +6,11 @@ module Jamcity
       def run(app)
         @app = app
 
-        send_message('/play 1 HOWDY')
+        play(1, [{ note: '3C', duration: 0.5}, { note: '45', duration: 0.5}])
+      end
+
+      def play(channel, track)
+        send_message("/play #{channel} #{track.to_json}")
       end
 
       private
