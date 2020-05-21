@@ -18,8 +18,9 @@ module Jamcity
       def send_message(message)
         connect do |socket|
           socket.sendmsg(message)
-          socket.close_write
-          puts socket.read # todo: handle response
+          # socket.close_write
+          # @app.logger.info 'todo: handle response'
+          # @app.logger.info socket.read # todo: handle response
         end
       end
 
