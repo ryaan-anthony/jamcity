@@ -1,0 +1,2 @@
+#!/bin/bash
+bundle exec ruby gtk-client.rb > tmp/jamcity.log 2>&1
