@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $HOME/.rvm/scripts/rvm
+
 cd ~/Projects/jamcity
 
 bundle exec ruby gtk-client.rb > tmp/jamcity.log 2>&1

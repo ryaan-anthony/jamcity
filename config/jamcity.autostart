@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Jamcity
+Type=Application
+Exec=jamcity-client
+Terminal=false
